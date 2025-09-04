@@ -14,6 +14,13 @@ export default tseslint.config([
       tseslint.configs.recommended,
       reactHooks.configs['recommended-latest'],
       reactRefresh.configs.vite,
+       theme: {
+    extend: {
+      fontFamily: {
+        lobster: ["Lobster", "cursive"],
+      },
+    },
+  },
     ],
     languageOptions: {
       ecmaVersion: 2020,
