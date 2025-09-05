@@ -5,45 +5,47 @@ import { Link } from "react-router-dom";
 
 const footerInfo = [
   {
-    title: "Depop",
+    title: "Zarxal haqida",
     links: [
-      { name: "About Us", path: "/" },
-      { name: "Careers", path: "/careers" },
+      { name: "Biz haqimizda", path: "/" },
+      { name: "Bo‘sh ish o‘rinlari", path: "/careers" },
       { name: "Blog", path: "/blog" },
-      { name: "News", path: "/news" },
-      { name: "Impact", path: "/impact" },
+      { name: "Yangiliklar", path: "/news" },
+      { name: "Ta’sir va tashabbuslar", path: "/impact" },
     ],
   },
   {
-    title: "Sell",
+    title: "Sotuvchilar uchun",
     links: [
-      { name: "Sell on Depop", path: "/sell" },
-      { name: "Depop Amplified", path: "/amplified" },
-      { name: "Depop Affiliates", path: "/affiliates" },
-      { name: "Become a Depop Insider", path: "/insider" },
+      { name: "Zarxal'da soting", path: "/sell" },
+      { name: "Zarxal Amplified", path: "/amplified" },
+      { name: "Hamkorlik dasturi", path: "/affiliates" },
+      { name: "Zarxal Insider bo‘ling", path: "/insider" },
     ],
   },
   {
-    title: "Help",
+    title: "Yordam",
     links: [
-      { name: "Help Center", path: "/help" },
-      { name: "Depop Status", path: "/status" },
+      { name: "Yordam markazi", path: "/help" },
+      { name: "Zarxal holati", path: "/status" },
     ],
   },
 ];
 
 const interests = [
-  { name: "Knee high-converse", path: "/search/knee-high-converse" },
-  { name: "New and Secondhand Jnco Jeans for Sale", path: "/search/jnco-jeans" },
-  { name: "Shop for Louis Vuitton Wallet for Men", path: "/search/lv-wallet-men" },
+  { name: "Bo‘yin baland sport oyoq kiyimlari", path: "/search/knee-high-converse" },
+  { name: "Yangi va ishlatilgan Jnco jinsilari", path: "/search/jnco-jeans" },
+  { name: "Erkaklar uchun Louis Vuitton hamyonlari", path: "/search/lv-wallet-men" },
 ];
 
 const Footer = () => {
   return (
     <footer className="bg-[#f5f5f5] text-gray-800 text-sm mt-24">
       <div className="max-w-7xl mx-auto px-4 py-12">
-        {/* Top Columns */}
+
+        {/* Yuqori qator: 3 ustun + logo */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
+
           {footerInfo.map((section, idx) => (
             <div key={idx}>
               <h4 className="font-semibold mb-4">{section.title}</h4>
@@ -59,32 +61,30 @@ const Footer = () => {
             </div>
           ))}
 
-          {/* QR code and social */}
+          {/* Logo + QR + Ijtimoiy tarmoqlar */}
           <div>
-            <h4 className="font-semibold mb-4">Download the Depop app</h4>
+            <h4 className="font-semibold mb-4">Zarxal mobil ilovasi</h4>
             <div className="flex items-start gap-4">
               <img
-                src="https://assets.depop.com/web/assets/get-the-app-qr-code.svg"
-                alt="QR Code"
-                className="w-20 h-20 object-contain"
+                src="https://i.pinimg.com/1200x/ab/01/89/ab01895078f02efdf95f7b486f94d7cd.jpg"
+                alt="Zarxal logotipi"
+                className="w-20 h-20 object-contain rounded"
               />
               <p className="text-sm max-w-xs">
-                List faster, track your orders, and never miss a beat. On iOS and Android.
+                Tez ro‘yxatdan o‘ting, buyurtmalaringizni kuzating va hech narsa o‘tkazib yubormang. iOS va Android uchun.
               </p>
             </div>
-            {/* Social icons */}
             <div className="flex gap-5 mt-6">
               <Twitter className="w-5 h-5 hover:text-[#1DA1F2] cursor-pointer" />
               <Instagram className="w-5 h-5 hover:text-[#E1306C] cursor-pointer" />
               <Facebook className="w-5 h-5 hover:text-[#1877F2] cursor-pointer" />
-              {/* TikTok ikonkasi kerak bo‘lsa, alohida kutubxonadan foydalaning */}
             </div>
           </div>
         </div>
 
-        {/* Also of interest */}
+        {/* Qiziqarli bo‘lishi mumkin */}
         <div className="mt-10 border-t pt-6">
-          <p className="font-semibold mb-2">Also of Interest</p>
+          <p className="font-semibold mb-2">Sizni qiziqtirishi mumkin</p>
           <div className="flex flex-wrap gap-x-6 gap-y-2 text-gray-600">
             {interests.map((item, idx) => (
               <Link key={idx} to={item.path} className="hover:underline">
@@ -94,31 +94,31 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Bottom bar */}
+        {/* Pastki navigatsiya paneli */}
         <div className="mt-10 border-t pt-6 flex flex-col md:flex-row justify-between items-center text-gray-500 gap-4">
-          {/* Country Selector */}
+          {/* Davlat tanlash */}
           <div className="flex items-center gap-2">
-            <span>United States</span>
+            <span>O‘zbekiston</span>
             <select className="border px-2 py-1 rounded bg-white text-sm">
-              <option>United States</option>
-              <option>Uzbekistan</option>
-              <option>United Kingdom</option>
+              <option>O‘zbekiston</option>
+              <option>Amerika Qo‘shma Shtatlari</option>
+              <option>Birlashgan Qirollik</option>
             </select>
           </div>
 
-          {/* Footer Links */}
+          {/* Havolalar */}
           <div className="flex flex-wrap justify-center md:justify-end gap-4 mt-2 md:mt-0">
             <Link to="/sitemap" className="hover:underline">
-              Sitemaps
+              Sayt xaritasi
             </Link>
             <Link to="/terms" className="hover:underline">
-              Terms and Conditions
+              Foydalanish shartlari
             </Link>
             <Link to="/privacy" className="hover:underline">
-              Privacy
+              Maxfiylik siyosati
             </Link>
             <Link to="/cookies" className="hover:underline">
-              Cookies
+              Cookies fayllar
             </Link>
           </div>
         </div>

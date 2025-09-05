@@ -1,14 +1,15 @@
-import  { SearchIcon } from "lucide-react";
+import { SearchIcon } from "lucide-react";
 import { useState, useEffect } from "react";
 
+// O‘zbekona libos nomlari
 const placeholders = [
-  'pink ralph lauren shirt',
-  'vintage leather jacket',
-  'nike sneakers',
-  'summer dress',
-   'gray niki sweetpants',
-    'red cortiseg cargos',
-     'black diskies cargos',
+  'pushti atlas ko‘ylak',
+  'milliy charm kurtka',
+  'oq sport tufli',
+  'yozgi ayollar libosi',
+  'kulrang sport shim',
+  'qizil shim (kortiseg)',
+  'qora keng shim (diskies)',
 ];
 
 const SearchBar = () => {
@@ -48,18 +49,16 @@ const SearchBar = () => {
   }, [charIndex, typing, placeholderIndex]);
 
   return (
-<div className="relative w-100 ml-25">
-  <span className="absolute left-2 top-1/2 transform -translate-y-1/2 text-gray-400">
-<SearchIcon/>
-  </span>
-  <input
-    type="text"
-    placeholder={`search for "${displayedText || 'pink ralph lauren shirt'}"`}
-    className="w-full rounded-full border border-gray-300 pl-10 pr-4 py-2 focus:outline-none focus:ring-2 focus:ring-[#e20020]"
-  />
-</div>
-
-
+    <div className="relative w-100 ml-25">
+      <span className="absolute left-2 top-1/2 transform -translate-y-1/2 text-gray-400">
+        <SearchIcon />
+      </span>
+      <input
+        type="text"
+        placeholder={`"${displayedText || 'pushti atlas ko‘ylak'}"ni qidiring`}
+        className="w-full rounded-full border border-gray-300 pl-10 pr-4 py-2 focus:outline-none focus:ring-2 focus:ring-[#e20020]"
+      />
+    </div>
   );
 };
 
