@@ -49,14 +49,14 @@ const SearchBar = () => {
   }, [charIndex, typing, placeholderIndex]);
 
   return (
-    <div className="relative w-100 ml-25">
-      <span className="absolute left-2 top-1/2 transform -translate-y-1/2 text-gray-400">
+    <div className="relative w-full max-w-md sm:max-w-lg mx-auto">
+      <span className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 pointer-events-none">
         <SearchIcon />
       </span>
       <input
         type="text"
-        placeholder={`"${displayedText || 'pushti atlas ko‘ylak'}"ni qidiring`}
-        className="w-full rounded-full border border-gray-300 pl-10 pr-4 py-2 focus:outline-none focus:ring-2 focus:ring-[#e20020]"
+        placeholder={`"${displayedText || "pushti atlas ko‘ylak"}"ni qidiring`}
+        className="w-full rounded-full border border-gray-300 pl-10 pr-4 py-2 text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-[#e20020]"
       />
     </div>
   );
